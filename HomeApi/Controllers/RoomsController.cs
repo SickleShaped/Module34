@@ -26,7 +26,6 @@ namespace HomeApi.Controllers
             _mapper = mapper;
         }
         
-        //TODO: Задание - добавить метод на получение всех существующих комнат
         
         /// <summary>
         /// Добавление комнаты
@@ -46,7 +45,7 @@ namespace HomeApi.Controllers
             return StatusCode(409, $"Ошибка: Комната {request.Name} уже существует.");
         }
 
-        [HttpPatch]
+        [HttpPost]
         [Route("{id}")]
         public async Task<IActionResult> Edit(
             [FromRoute] Guid id,
